@@ -346,22 +346,27 @@ namespace TheGrinReaper
             {
                 case OhNoMy.BRAIN:
                     BecomeBrainless();
-                    // ETGModConsole.Log("lost your brain"); break;
+                    // ETGModConsole.Log("lost your brain");
+                    break;
                 case OhNoMy.EYES:
                     CutStat(chump,PlayerStats.StatType.Accuracy,2.0f);
                     ETGMod.AIActor.OnPreStart += Bombo.ICantSee;
-                    // ETGModConsole.Log("lost your eyes"); break;
+                    // ETGModConsole.Log("lost your eyes");
+                    break;
                 case OhNoMy.ARMS:
                     CutStat(chump,PlayerStats.StatType.Damage,0.6f);
                     CutStat(chump,PlayerStats.StatType.ReloadSpeed,1.5f);
                     CutStat(chump,PlayerStats.StatType.RateOfFire,0.75f);
-                    // ETGModConsole.Log("lost your arms"); break;
+                    // ETGModConsole.Log("lost your arms");
+                    break;
                 case OhNoMy.FINGERS:
                     chump.PostProcessProjectile += Bombo.MightDropTheGun;
-                    // ETGModConsole.Log("lost your fingers"); break;
+                    // ETGModConsole.Log("lost your fingers");
+                    break;
                 case OhNoMy.LEGS:
                     CutStat(chump,PlayerStats.StatType.MovementSpeed,0.6f);
-                    // ETGModConsole.Log("lost your legs"); break;
+                    // ETGModConsole.Log("lost your legs");
+                    break;
                 case OhNoMy.HEART:
                     if (chump.characterIdentity == PlayableCharacters.Robot)
                         chump.healthHaver.Armor = 1;
@@ -370,18 +375,21 @@ namespace TheGrinReaper
                         chump.healthHaver.Armor = 0;
                         chump.healthHaver.currentHealth = 0.5f;
                     }
-                    // ETGModConsole.Log("lost your heart"); break;
+                    // ETGModConsole.Log("lost your heart");
+                    break;
                 case OhNoMy.LUNGS:
                     chump.OnPreDodgeRoll -= Bombo.DodgeRollsAreExhausting;
                     chump.OnPreDodgeRoll += Bombo.DodgeRollsAreExhausting;
-                    // ETGModConsole.Log("lost your lungs"); break;
+                    // ETGModConsole.Log("lost your lungs");
+                    break;
                 case OhNoMy.STOMACH:
                     chump.GetExtComp().OnPickedUpHP -= Bombo.AppetiteLoss;
                     chump.GetExtComp().OnPickedUpHP += Bombo.AppetiteLoss;
                     LootEngine.SpawnItem(PickupObjectDatabase.GetById(73).gameObject, chump.CurrentRoom.GetRandomVisibleClearSpot(1, 1).ToVector3(), Vector2.zero, 1f, false, true, false);
                     LootEngine.SpawnItem(PickupObjectDatabase.GetById(85).gameObject, chump.CurrentRoom.GetRandomVisibleClearSpot(1, 1).ToVector3(), Vector2.zero, 1f, false, true, false);
                     LootEngine.SpawnItem(PickupObjectDatabase.GetById(120).gameObject, chump.CurrentRoom.GetRandomVisibleClearSpot(1, 1).ToVector3(), Vector2.zero, 1f, false, true, false);
-                    // ETGModConsole.Log("lost your stomach"); break;
+                    // ETGModConsole.Log("lost your stomach");
+                    break;
             }
         }
 
