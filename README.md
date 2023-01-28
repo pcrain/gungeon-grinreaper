@@ -1,5 +1,7 @@
 # Introducing The Grin Reaper
 
+## (entry for the December 2022 Enter the Gungeon GunJam: *Sacrifices Must Be Made*)
+
 This *friendly* little guy will help new Gungeoneers out by offering fantastic items at the beginning of their run...for a price
 
 (continue reading for spoilers / mechanics)
