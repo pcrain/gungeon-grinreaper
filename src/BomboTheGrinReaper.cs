@@ -397,17 +397,17 @@ namespace TheGrinReaper
         {
             const int AVG_NUM_TIMES_TO_DROP = 10;
             PlayerController klutz = p.ProjectilePlayerOwner();
-            if (klutz.CurrentGun == null || !klutz.CurrentGun.CanBeDropped)
+            Gun gun = klutz.CurrentGun;
+            if (gun == null || !gun.CanBeDropped || !gun.CanActuallyBeDropped(klutz) || klutz.inventory.GunLocked.Value)
                 return;
 
-            Gun gunToSlip = klutz.CurrentGun;
-            int maxammo = gunToSlip.AdjustedMaxAmmo;
+            int maxammo = gun.AdjustedMaxAmmo;
 
             if (UnityEngine.Random.Range(0,maxammo) < AVG_NUM_TIMES_TO_DROP)
             {
                 // stealing from NN again oh boy
-                klutz.inventory.RemoveGunFromInventory(gunToSlip);
-                gunToSlip.ForceThrowGun();
+                klutz.inventory.RemoveGunFromInventory(gun);
+                gun.ForceThrowGun();
                 // yield return new WaitForSeconds(0.1f);
                 // gunToSlip.ToggleRenderers(true);
                 // gunToSlip.RegisterMinimapIcon();
